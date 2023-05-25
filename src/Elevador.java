@@ -1,4 +1,5 @@
 public class Elevador {
+    String local;
     int andarAtual;
     int totalAndares;
     double capacidade;
@@ -6,7 +7,8 @@ public class Elevador {
     int quantidadePessoas;
     int andaresAtendidos;
 
-    public Elevador(int andarAtual, int totalAndares, int capacidade, int quantidadeMaxPessoas, int quantidadePessoas) {
+    public Elevador(String local, int andarAtual, int totalAndares, int capacidade, int quantidadeMaxPessoas, int quantidadePessoas) {
+        this.local = local;
         this.andarAtual = andarAtual;
         this.totalAndares = totalAndares;
         this.capacidade = capacidade;
@@ -47,11 +49,11 @@ public class Elevador {
             quantidadePessoas -= decremento;
             System.out.println("Pessoa removida");
         } else {
-            System.out.println("Não há ninguém.");
+            System.out.println("O elevador está vazio.");
         }
     }
     public void imprimirDados() {
-        System.out.println("-------------------------------------------------------");
+        System.out.println("Elevador: " + this.local);
         System.out.println("Andar atual: " + this.andarAtual);
         System.out.println("Quantidade de andares: " + this.totalAndares);
         System.out.println("Capacidade: " + this.capacidade);
